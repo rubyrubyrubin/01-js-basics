@@ -31,3 +31,28 @@ function klikAlkohol() {
     console.log("alkoholfri");
   }
 }
+
+
+
+// oevelse 2 //
+
+ngOnInit() {
+
+var myDate = new Date();
+var hrs = myDate.getHours();
+
+var besked;
+
+if (hrs >= 5 && hrs <= 10) besked = "god morgen";
+else if (hrs >= 10 && hrs <= 18) besked = "god dag";
+else if (hrs >= 18 && hrs <= 24) besked = "god aften";
+else if (hrs >= 24 && hrs <= 5) besked = "god nat";
+
+document.getElementById('besked').innerHTML =
+'<b>' + besked + '</b>!';
+}
+
+
+// oevelse 3 //
+
+(Math.random()*11)
