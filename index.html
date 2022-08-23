@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
-
-    <title>Document</title>
+    <title>drinks</title>
   </head>
   <body>
     <div class="images">
-      <div id="snaps">
-        <img src="snaps.webp" alt="snaps" />
-      </div>
-      <div id="beer">
-        <img src="beer.webp" alt="beer" />
-      </div>
-      <div id="fanta">
-        <img src="fanta.webp" alt="f" />
-      </div>
-      <div id="cola">
-        <img src="cola.webp" alt="c" />
-      </div>
+      <img id="snaps" src="snaps.webp" alt="snaps" class="" />
+      <img id="beer" src="beer.webp" alt="beer" class="" />
+      <img id="fanta" src="fanta.webp" alt="fanta" class="" />
+      <img id="cola" src="cola.webp" alt="cola" class="" />
     </div>
-    <script src="/java.js"></script>
+
+    <script>
+      // que.sel.All img tager fat i alle images//
+      // kan ogsaa lave hver for sig hvor de alle kalder samme funktion men All er DRY//
+      document.querySelectorAll("img");
+
+      function tjek() {
+        // this referer til det html element der har klik event paa sig. det er billedet der bliver klikket paa.//
+        // man kunde ogsaa skrive this.alt saa der staar i consollen hvad alt navn er, eks. snaps, beer//
+        console.log(this);
+        // || betyder eller//
+        if (this.alt == "beer" || this.alt == "snaps") {
+          console.log("indeholder alkohol");
+          // alt andet/else saa er den alkoholfri//
+        } else {
+          console.log("alkoholfri");
+        }
+      }
+    </script>
   </body>
 </html>
