@@ -4,26 +4,39 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
     <title>drinks</title>
+    <style>
+      .images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+      }
+    </style>
   </head>
   <body>
     <div class="images">
-      <img id="snaps" src="snaps.webp" alt="snaps" class="" />
-      <img id="beer" src="beer.webp" alt="beer" class="" />
-      <img id="fanta" src="fanta.webp" alt="fanta" class="" />
-      <img id="cola" src="cola.webp" alt="cola" class="" />
+      <img id="snaps" width="300px" src="snaps.webp" alt="snaps" class="" />
+      <img id="beer" width="300px" src="beer.webp" alt="beer" class="" />
+      <img id="fanta" width="300px" src="fanta.webp" alt="fanta" class="" />
+      <img id="cola" width="300px" src="cola.webp" alt="cola" class="" />
     </div>
 
     <script>
       // que.sel.All img tager fat i alle images//
       // kan ogsaa lave hver for sig hvor de alle kalder samme funktion men All er DRY//
-      document.querySelectorAll("img");
+      const snaps = document.querySelector("#snaps");
+      snaps.addEventListener("click", tjek);
+      // document.querySelectorAll("img");
+      // lang version saa det er skaaret ud lige nu, men ellers DRY//
+      //shift option down/up for copy//
+      document.querySelector("#fanta").addEventListener("click", tjek);
+      document.querySelector("#cola").addEventListener("click", tjek);
+      document.querySelector("#beer").addEventListener("click", tjek);
 
       function tjek() {
         // this referer til det html element der har klik event paa sig. det er billedet der bliver klikket paa.//
         // man kunde ogsaa skrive this.alt saa der staar i consollen hvad alt navn er, eks. snaps, beer//
-        console.log(this);
+        console.log(this.alt);
         // || betyder eller//
         if (this.alt == "beer" || this.alt == "snaps") {
           console.log("indeholder alkohol");

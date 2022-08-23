@@ -14,33 +14,30 @@
       <button>Tjek tal</button>
     </main>
 
-    <!-- <script src="/java.js"></script> -->
     <script>
-            // event listner der finder knappen og lytter efter klik paa knappen, kalder function tjekTal//
+      // event listner der finder knappen og lytter efter klik paa knappen, kalder function tjekTal//
       document.querySelector("button").addEventListener("click", tjekTal);
       let forsoeg = 0;
       const ranNum = Math.floor(Math.random() * 11);
       // viser ude i console hvilket random number er det "rigtige". kun for eget skyld naar tester, kan udkommentere hvis vises til nogen//
-      console.log(ranNum);
 
-      function tjekTal()
+      function tjekTal() {
         // ++ er en operator der ligger 1 til antal forsoeg, den taeller hver gang nogen klikker//
         forsoeg++;
         // input felt #tal oppe fra html, skriver value fordi det er vaeriden der staar inde i input feltet som bruger skriver//
         const brugerTal = document.querySelector("#tal").value;
         // spoerger om det tilfaeldige nummer er stoerre end brugertallet//
         if (ranNum > brugerTal) {
-          alert ("Øv! " brugerTal " var for lavt. Prøv igen");
+          alert("Øv! " + brugerTal + "var for lavt. Prøv igen");
           // console log er til migselv//
           console.log(ranNum, brugerTal);
-        }
-        else if (ranNum < brugerTal); {
+        } else if (ranNum < brugerTal) {
           alert("Øv! " + brugerTal + " var for højt. Prøv igen");
           console.log(ranNum, brugerTal);
           // else er i alle andre situationer end < > - det er det samme tal//
-        else {
-          alert(brugerTal + " er rigtigt!" + " Du brugte " + forsoeg " forsøg. Prøv igen");
-      console.log("Du gættede rigtigt!");
+        } else {
+          alert(brugerTal + " er rigtigt!" + " Du brugte " + forsoeg + " forsøg. Prøv igen med et nyt tal.");
+          console.log("Du gættede rigtigt!");
           // hvis gaettet rigtigt generere den et nyt tal//
           location.reload();
         }
